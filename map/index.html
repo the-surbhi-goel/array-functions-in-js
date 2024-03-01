@@ -1,0 +1,36 @@
+<html>
+
+<h1>Map</h1>
+
+<h2>It returns a new array after applying calback</h2>
+<p style="color: red;">CHECK CONSOLE FOR OUTPUT</p>
+
+<br/><br/>
+<h2>Existing map</h2>
+<pre>
+    const original = [12, 24, 36];
+
+    const copy = original.map(function (item) {
+      return "mapped item " + item;
+    });
+</pre>
+
+<br/><br/>
+<h2>Custom map</h2>
+<pre>
+    Array.prototype.myMap = function (callback) {
+        const resultArray = [];
+        for (let i = 0; i < this.length; i++) {
+          resultArray.push(callback(this[i], i, this));
+        }
+        return resultArray;
+      };
+
+    const original = [12, 24, 36];
+    const copy = original.myMap(function (item) {
+      return "mapped item " + item;
+    });
+</pre>
+
+<script src="./index.js"></script>
+</html>
