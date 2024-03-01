@@ -1,0 +1,37 @@
+<html>
+
+<h1>Find</h1>
+
+<h2>It returns the value of first element that passes a test</h2>
+<p style="color: red;">CHECK CONSOLE FOR OUTPUT</p>
+
+<br/><br/>
+<h2>Existing find</h2>
+<pre>
+  const original = [10, 12, 21, 24, 36, 39];
+
+  const result = original.find(function (item) {
+    return item%7 === 0;
+  });
+</pre>
+
+<br/><br/>
+<h2>Custom find</h2>
+<pre>
+  Array.prototype.myFind = function (callback) {
+    for (let i = 0; i < this.length; i++) {
+      if(callback(this[i], i, this) === true){
+        return this[i];
+      }
+    }
+  };
+
+  const original = [10, 12, 21, 24, 36, 39];
+
+  const result = original.myFind(function (item) {
+    return item%7 === 0;
+  });
+</pre>
+
+<script src="./index.js"></script>
+</html>
