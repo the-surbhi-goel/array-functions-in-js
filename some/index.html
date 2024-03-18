@@ -1,0 +1,38 @@
+<html>
+
+<h1>Some</h1>
+
+<h2>Checksif at least one array element satisfies a condition</h2>
+<p style="color: red;">CHECK CONSOLE FOR OUTPUT</p>
+
+<br/><br/>
+<h2>Existing some</h2>
+<pre>
+  const original = [10, 12, 21, 24, 36, 39];
+
+  const result = original.some(function (item) {
+    return item%7 === 0;
+  });
+</pre>
+
+<br/><br/>
+<h2>Custom some</h2>
+<pre>
+  Array.prototype.mySome = function (callback) {
+    for (let i = 0; i < this.length; i++) {
+      if(callback(this[i], i, this) === true){
+        return true;
+      }
+    }
+    return false;
+  };
+
+  const original = [10, 12, 21, 24, 36, 39];
+
+  const result = original.mySome(function (item) {
+    return item%7 === 0;
+  });
+</pre>
+
+<script src="./index.js"></script>
+</html>
