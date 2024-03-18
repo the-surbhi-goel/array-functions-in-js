@@ -1,0 +1,38 @@
+<html>
+
+<h1>Every</h1>
+
+<h2>Checks if every array element satisfies a condition</h2>
+<p style="color: red;">CHECK CONSOLE FOR OUTPUT</p>
+
+<br/><br/>
+<h2>Existing every</h2>
+<pre>
+  const original = [9, 12, 21, 24, 36, 39];
+
+  const result = original.every(function (item) {
+    return item%3 === 0;
+  });
+</pre>
+
+<br/><br/>
+<h2>Custom every</h2>
+<pre>
+  Array.prototype.myEvery = function (callback) {
+    for (let i = 0; i < this.length; i++) {
+      if(callback(this[i], i, this) === false){
+        return false;
+      }
+    }
+    return true;
+  };
+
+  const original = [10, 12, 21, 24, 36, 39];
+
+  const result = original.mySome(function (item) {
+    return item%7 === 0;
+  });
+</pre>
+
+<script src="./index.js"></script>
+</html>
