@@ -1,0 +1,27 @@
+<html>
+
+<h1>Push</h1>
+
+<h2>It'll push the value at the top of the array</h2>
+<p style="color: red;">CHECK CONSOLE FOR OUTPUT</p>
+
+<br/><br/>
+<h2>Existing push</h2>
+<pre>
+    const arr1 = [1, 2, 3, 4];
+    arr1.push(5);
+</pre>
+
+<br/><br/>
+<h2>Custom push</h2>
+<pre>
+    Array.prototype.myPush = function (value) {
+        let len = this.length;
+        this[len] = value;
+    };
+    const arr2 = [1, 2, 3, 4];
+    arr2.myPush(5);
+</pre>
+
+<script src="./index.js"></script>
+</html>
