@@ -1,0 +1,31 @@
+<html>
+
+<h1>Shift</h1>
+
+<h2>It'll remove the first item of the array</h2>
+<p style="color: red;">CHECK CONSOLE FOR OUTPUT</p>
+
+<br/><br/>
+<h2>Existing shift</h2>
+<pre>
+    const arr1 = [1, 2, 3, 4];
+    arr1.shift();
+</pre>
+
+<br/><br/>
+<h2>Custom push</h2>
+<pre>
+    Array.prototype.myShift = function () {
+        let len = this.length;
+        for (let i = 1; i < len; i++) {
+            this[i - 1] = this[i];
+        }
+        this.length = this.length - 1;
+    };
+    
+    const arr2 = [1, 2, 3, 4];
+    arr2.myShift();
+</pre>
+
+<script src="./index.js"></script>
+</html>
