@@ -2,5 +2,36 @@
 
 <h1>For Each</h1>
 
+<h2>It'll apply the callback on each and every element of the array</h2>
+<p style="color: red;">CHECK CONSOLE FOR OUTPUT</p>
+
+<br/><br/>
+<h2>Existing For Each</h2>
+<pre>
+    const original = [12, 24, 36];
+    const copy = [];
+  
+    original.forEach(function (item) {
+      copy.push(item * 2);
+    });
+</pre>
+
+<br/><br/>
+<h2>Custom For Each</h2>
+<pre>
+    Array.prototype.myForEach = function (callback) {
+        for (let i = 0; i < this.length; i++) {
+          callback(this[i]);
+        }
+    };
+      
+    const original = [12, 24, 36];
+    const copy = [];
+      
+    original.myForEach(function (item) {
+        copy.push(item * 2);
+    });
+</pre>
+
 <script src="./index.js"></script>
 </html>
